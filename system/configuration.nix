@@ -11,6 +11,17 @@
       ./fonts.nix
     ];
 
+  # VirtualBox...
+  virtualisation.virtualbox = {
+    host.enable = true;
+    host.headless = true;
+  };
+
+  # Shell...
+  programs.bash.interactiveShellInit = ''
+    bind "set completion-ignore-case on"
+  '';
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -62,8 +73,8 @@
   services.xserver.displayManager.lightdm.greeters.gtk.cursorTheme.name = "Capitaine Cursors";
   services.xserver.displayManager.lightdm.greeters.gtk.clock-format = "%H:%M";
   services.xserver.displayManager.lightdm.background = pkgs.fetchurl {
-    url = "https://w.wallhaven.cc/full/wq/wallhaven-wqery6.jpg";
-    sha256 = "0d5416glma4l2sksxszddd6iqchng85j2gf9vc10y14g07cgayg0";
+    url = "https://raw.githubusercontent.com/mbprtpmix/nixos/testing/wallpapers/mountains.jpg";
+    sha256 = "0k7lpj7rlb08bwq3wy9sbbq44rml55jyp9iy4ipwzy4bch0mc6y4";
   };
   services.xserver.displayManager.lightdm.greeters.gtk.extraConfig = ''
     indicators = ~clock;~spacer;~host;~spacer;~language;~session;~a11y;~power
@@ -94,7 +105,7 @@
   users.users.mbpnix = {
     isNormalUser = true;
     hashedPassword = "$6$T0889cgw$ztcln2TAS.FQqYr7qkRriwN/4AWEL9cNVa9hUBcN74KF21RIL8jHYi7vN./KvOqIqkFdW/RthR2wnnJbic5.00";
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "vboxusers" ]; # Enable ‘sudo’ for the user.
     uid = 1000;
   };
 
@@ -109,7 +120,7 @@
   environment.systemPackages = with pkgs; [
     wget vim firefox git curl rsync rclone
     arc-icon-theme arc-theme capitaine-cursors
-    cached-nix-shell lm_sensors
+    cached-nix-shell nixops lm_sensors
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Let Home Manager install and manage itself.
@@ -39,6 +39,8 @@
 
   # My packages...
   home.packages = with pkgs; [
+    arduino
+    scrot
     bat
     exa
     lsd
@@ -76,6 +78,10 @@
     pass
     stow
     vlc
+    xarchiver
+    unzip
+    unrar
+    p7zip
   ];
 
 }
