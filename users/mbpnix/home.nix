@@ -30,6 +30,36 @@
     ];
   };
 
+  # GTK...
+  gtk = {
+    enable = true;
+    iconTheme.name = "Arc";
+    iconTheme.package = pkgs.arc-icon-theme;
+    theme.name = "Sweet-Dark";
+    theme.package = pkgs.sweet;
+  };
+
+  # password-store...
+  programs.password-store = {
+    enable = true;
+    package = pkgs.pass.withExtensions (exts: [ exts.pass-otp ]);
+    settings = { PASSWORD_STORE_DIR = "$HOME/.local/share/password-store"; };
+  };
+
+  # GPG...
+  programs.gpg = {
+    enable = true;
+    settings = { homedir = "$HOME/.local/share/gnupg"; };
+  };
+
+  # GPG Agent...
+  services.gpg-agent = {
+    enable = true;
+    enableSshSupport = true;
+    defaultCacheTtl = 60;
+    defaultCacheTtlSsh = 60;
+  };
+
   # User Git...
   programs.git = {
     enable = true;
@@ -39,7 +69,7 @@
 
   # My packages...
   home.packages = with pkgs; [
-    arduino
+    bc
     scrot
     bat
     exa
@@ -47,7 +77,7 @@
     ripgrep
     procs
     speedtest-cli
-    bc
+    arduino
     filezilla
     neofetch
     arc-icon-theme
@@ -75,7 +105,6 @@
     openh264
     xclip
     x264
-    pass
     stow
     vlc
     xarchiver
