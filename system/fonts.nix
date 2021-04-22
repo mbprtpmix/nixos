@@ -4,7 +4,7 @@
   fonts = {
     fonts = with pkgs; [
       # nerdfonts
-      (nerdfonts.override { fonts = [ "Agave" "FiraCode" "JetBrainsMono" ]; })
+      (nerdfonts.override { fonts = [ "3270" "Iosevka" "IBMPlexMono" "FiraCode" "JetBrainsMono" ]; })
 
       # normal fonts
       fantasque-sans-mono

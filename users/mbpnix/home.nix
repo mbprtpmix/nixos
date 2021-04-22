@@ -69,48 +69,50 @@
 
   # My packages...
   home.packages = with pkgs; [
-    bc
-    scrot
-    bat
-    exa
-    lsd
-    ripgrep
-    procs
-    speedtest-cli
-    arduino
-    filezilla
-    neofetch
     arc-icon-theme
     arc-theme
+    arduino
+    bat
+    bc
+    bleachbit
     capitaine-cursors
+    discord
+    etcher
+    exa
+    filezilla
+    freetube
+    gruvbox-dark-gtk
+    gruvbox-dark-icons-gtk
+    hping
+    htop
+    keepassxc
+    kotatogram-desktop
+    lsd
+    mediastreamer-openh264
+    neofetch
+    nmap
+    nordic
     numix-gtk-theme
     numix-solarized-gtk-theme
-    vimix-gtk-themes
-    gruvbox-dark-gtk
-    nordic
-    sweet
-    orchis
-    htop
-    hping
-    nmap
-    etcher
-    youtube-dl
-    freetube
-    discord
-    kotatogram-desktop
-    mediastreamer-openh264
-    keepassxc
-    gruvbox-dark-icons-gtk
-    bleachbit
+    obs-studio
     openh264
-    xclip
-    x264
-    stow
-    vlc
-    xarchiver
-    unzip
-    unrar
+    orchis
     p7zip
+    procs
+    ripgrep
+    scrot
+    speedtest-cli
+    stow
+    sweet
+    tree
+    unrar
+    unzip
+    vimix-gtk-themes
+    vlc
+    x264
+    xarchiver
+    xclip
+    youtube-dl
   ];
 
 }

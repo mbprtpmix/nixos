@@ -26,6 +26,17 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Optimise Store...
+  nix.autoOptimiseStore = true;
+
+  # Enable Flakes...
+  nix = {
+    package = pkgs.nixUnstable;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
   # Enable sandbox...
   nix.useSandbox = true;
 
@@ -88,9 +99,29 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
+  # OpenGL...
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+    # Support hardware accelerated encoding/decoding.
+    extraPackages = with pkgs; [
+      vaapiIntel
+      libvdpau-va-gl
+      vaapiVdpau
+      intel-ocl
+    ];
+    extraPackages32 = with pkgs.pkgsi686Linux; [
+      vaapiIntel
+      libvdpau-va-gl
+      vaapiVdpau
+    ];
+  };
+
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.support32Bit = true;
 
   # Intel Microcode.
   hardware.cpu.intel.updateMicrocode = true;
@@ -118,9 +149,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget vim firefox git curl rsync rclone bleachbit
     arc-icon-theme arc-theme capitaine-cursors
-    cached-nix-shell nixops lm_sensors
+    cached-nix-shell nixops
+    wget vim firefox git curl rsync rclone bleachbit
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
