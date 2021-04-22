@@ -107,7 +107,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget vim firefox git
+    wget vim firefox git curl rsync rclone
     arc-icon-theme arc-theme capitaine-cursors
     cached-nix-shell lm_sensors
   ];

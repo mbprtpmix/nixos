@@ -74,6 +74,7 @@
     xclip
     x264
     pass
+    stow
     vlc
   ];
 

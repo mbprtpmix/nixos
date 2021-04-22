@@ -15,8 +15,6 @@
       unifont
     ];
 
-    fontDir.enable = true;
-    
     enableDefaultFonts = false;
 
     fontconfig.defaultFonts = {
