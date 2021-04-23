@@ -80,6 +80,7 @@
     enableSshSupport = true;
     defaultCacheTtl = 60;
     defaultCacheTtlSsh = 60;
+    pinentryFlavor = "gtk2";
   };
 
   # User Git...
@@ -106,6 +107,7 @@
     google-cloud-sdk
     gruvbox-dark-gtk
     gruvbox-dark-icons-gtk
+    git-crypt
     hping
     htop
     i3lock-color
@@ -124,6 +126,7 @@
     orchis
     p7zip
     procs
+    pinentry-gtk2
     ripgrep
     scrot
     speedtest-cli

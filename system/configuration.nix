@@ -161,7 +161,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     arc-icon-theme arc-theme capitaine-cursors
-    cached-nix-shell nixops
+    cachix cached-nix-shell nixops
     wget vim firefox git curl rsync rclone bleachbit
   ];
 
