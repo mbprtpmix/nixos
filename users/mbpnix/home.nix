@@ -23,7 +23,29 @@
   programs.neovim = {
     enable = true;
     vimAlias = true;
-    extraConfig = "colorscheme gruvbox";
+    extraConfig = ''
+      syntax on
+
+      set noerrorbells
+      set tabstop=2 softtabstop=2
+      set shiftwidth=2
+      set expandtab
+      set smartindent
+      set nu rnu
+      set nowrap
+      set smartcase
+      set noswapfile
+      set nobackup
+      set undodir=~/.vim/undodir
+      set undofile
+      set incsearch
+
+      set colorcolumn=80
+      highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+      colorscheme gruvbox
+      set background=dark 
+    '';
     plugins = [
       pkgs.vimPlugins.vim-nix
       pkgs.vimPlugins.gruvbox
