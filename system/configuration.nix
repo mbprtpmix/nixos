@@ -21,6 +21,11 @@
   programs.bash.interactiveShellInit = ''
     bind "set completion-ignore-case on"
   '';
+  programs.bash.shellAliases = {
+    x="xclip -selection c -i";		# Cut	(does not filter).
+    c="xclip -selection c -i -f";		# Copy	(does filter).
+    v="xclip -selection c -o";		# Paste.
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
