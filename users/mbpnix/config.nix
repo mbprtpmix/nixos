@@ -1,2 +1,5 @@
-# Alow unfree.
-{ allowUnfree = true; }
+{ pkgs, ... }:
+
+{ 
+  allowUnfree = true;
+}

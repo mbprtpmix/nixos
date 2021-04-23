@@ -118,6 +118,12 @@
     ];
   };
 
+  # Enable udiskie...
+  services.udisks2.enable = true;
+
+  # Set vim as default editor...
+  programs.vim.defaultEditor = true;
+
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;

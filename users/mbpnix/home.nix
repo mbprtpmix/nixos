@@ -81,10 +81,13 @@
     exa
     filezilla
     freetube
+    google-cloud-sdk
     gruvbox-dark-gtk
     gruvbox-dark-icons-gtk
     hping
     htop
+    i3lock-color
+    i3lock-fancy
     keepassxc
     kotatogram-desktop
     lsd

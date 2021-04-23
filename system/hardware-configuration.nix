@@ -33,4 +33,6 @@
     [ { device = "/dev/disk/by-uuid/3a11a096-19eb-4121-a55e-e7aeb436df90"; }
     ];
 
+  powerManagement.cpuFreqGovernor = lib.mkDefault "ondemand";
+
 }
