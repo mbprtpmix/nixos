@@ -1,2 +1,2 @@
-# nixos/testing-staging
-nixos/testing-staging
+# nixos/staging-testing
+nixos/staging-testing

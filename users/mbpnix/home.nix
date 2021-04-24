@@ -18,7 +18,7 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "21.05";
-
+  
   # nvim...
   programs.neovim = {
     enable = true;
@@ -104,10 +104,10 @@
     exa
     filezilla
     freetube
+    git-crypt
     google-cloud-sdk
     gruvbox-dark-gtk
     gruvbox-dark-icons-gtk
-    git-crypt
     hping
     htop
     i3lock-color
@@ -117,6 +117,7 @@
     lsd
     mediastreamer-openh264
     neofetch
+    nettools
     nmap
     nordic
     numix-gtk-theme
@@ -125,8 +126,8 @@
     openh264
     orchis
     p7zip
-    procs
     pinentry-gtk2
+    procs
     ripgrep
     scrot
     speedtest-cli
@@ -142,5 +143,4 @@
     xclip
     youtube-dl
   ];
-
 }
